@@ -45,13 +45,13 @@ const Form = (props) => {
   useEffect(() => {
     if (params.id) {
       getOferta(params.id)
-        .then(({id, titulo, descripcion, empresa, salario, ciudad}) => {
-          setId(id)
-          setTitulo(titulo)
-          setDescripcion(descripcion)
-          setEmpresa(empresa)
-          setCiudad(ciudad)
-          setSalario(salario)
+        .then((oferta) => {
+          setId(oferta.id)
+          setTitulo(oferta.titulo)
+          setDescripcion(oferta.descripcion)
+          setEmpresa(oferta.empresa)
+          setCiudad(oferta.ciudad)
+          setSalario(oferta.salario)
         })
     }
   }, [params.id])
